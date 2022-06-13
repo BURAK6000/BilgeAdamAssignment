@@ -11,7 +11,7 @@ public class Assignment5_1 {
 		int i = 2;
 		boolean check = true;
 		if (!(n >= 2)) {
-			System.out.println("n is not a prime number!");
+			System.out.println(n + " is not a prime number!");
 
 		} else {
 			while (i <= Math.sqrt(n)) {
@@ -21,9 +21,9 @@ public class Assignment5_1 {
 				i++;
 			}
 			if (check) {
-				System.out.println("n is a prime number");
+				System.out.println(n + " is a prime number");
 			} else {
-				System.out.println("n is not a prime number!");
+				System.out.println(n + " is not a prime number!");
 			}
 		}
 
