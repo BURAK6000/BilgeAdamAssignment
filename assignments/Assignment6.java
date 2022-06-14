@@ -19,8 +19,6 @@ public class Assignment6 {
 		System.out.println("1. Oyuna basla");
 		System.out.println("2. Sistemden cikis");
 
-		System.out.print("secim: ");
-
 		short n = scanner.nextShort();
 		scanner.nextLine();
 
