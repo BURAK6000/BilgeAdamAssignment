@@ -1,11 +1,10 @@
-package assignment;
+package assignments;
 
 import java.util.Scanner;
 
 public class Assignment5_3 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter a number: ");
