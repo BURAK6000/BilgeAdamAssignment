@@ -61,7 +61,7 @@ public class Assignment6 {
 			break;
 
 		default:
-			System.out.println();
+			System.out.println("Secim tanımlanamadi!");
 			break;
 		}
 
