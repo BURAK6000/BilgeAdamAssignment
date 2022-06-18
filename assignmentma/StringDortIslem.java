@@ -25,12 +25,13 @@ public class StringDortIslem {
 				System.out.print("Kelime giriniz: ");
 				String s = scanner.nextLine();
 				int k2 = 0;
-				int kontrol = 0;
+				int kontrol = 0; // String icinde girilen sayıların 2 den fazla olup olmamasını kontrol eder
+									// İkiden fazla olursa döngüden cıkar
 				for (int i = 0; i < s.length(); i++) {
-					int k5 = 0;
-					int sayac = 0;
+					int k5 = 0; // String icindeki sayiları ayrı ayrı ifade edecek
+					int sayac = 0; // String icindeki sayının ASCII degerine göre gercek degerini ifade eder
 					if (s.charAt(i) >= 48 && s.charAt(i) <= 57) {
-						int sayac1 = 48;
+						int sayac1 = 48; // ASCII de 48 = 0
 						kontrol++;
 
 						while (sayac1 <= 57) {
@@ -79,7 +80,7 @@ public class StringDortIslem {
 			case 3:
 				System.out.print("Kelime giriniz: ");
 				String s2 = scanner.nextLine();
-				int k = 1;
+				int k = 1; // basamak sayısına göre 10'ar 10'ar artar
 				int k1 = 0;
 				int k4 = 1;
 				int k5 = 0;
@@ -97,7 +98,9 @@ public class StringDortIslem {
 							sayac++;
 						}
 						k1 += k5;
-						if (!(s2.charAt(i - 1) >= 48 && s2.charAt(i - 1) <= 57)) {
+						if (!(s2.charAt(i - 1) >= 48 && s2.charAt(i - 1) <= 57)) { // String ifade icinde sayının
+																					// basamak degerini belirler
+																					// 45455->brggrgrg
 							kontrol2++;
 							k = 1;
 							k4 *= k1;
