@@ -4,24 +4,15 @@ public class Soru3CustomStringTR {
 
 	String ifade;
 
-	public Soru3CustomStringTR() {
+	public static void main(String[] args) {
 
-		ifade = "";
+		Soru3CustomStringTR customStringTR = new Soru3CustomStringTR();
+
+		customStringTR.ifade = "burakOzer";
+		System.out.println(customStringTR.uzunluk());
+		System.out.println(customStringTR.harfleriBuyukYap());
+
 	}
-
-	public Soru3CustomStringTR(String string) {
-		ifade = string;
-	}
-
-//	public static void main(String[] args) {
-//
-//		Soru3CustomStringTR customStringTR = new Soru3CustomStringTR();
-//
-//		customStringTR.ifade = "burakOzer";
-//		System.out.println(customStringTR.uzunluk());
-//		System.out.println(customStringTR.harfleriBuyukYap());
-//
-//	}
 
 	public int uzunluk() {
 

@@ -15,15 +15,15 @@ public class OfficeWorker extends Employee {
 	}
 
 	@Override
-	public String getIsUnvani() {
-		if (getMaas() > 8000 && getMaas() < 1500) {
-			return "calisan";
-		} else if (getMaas() > 15000) {
-			return "kidemli calisan";
+	public void setIsUnvani() {
+		if (getMaas() > 8000 && getMaas() < 12000) {
+			setIsUnvani("calısan");
+
+		} else if (getMaas() > 12000) {
+			setIsUnvani("kıdemli calisan");
 
 		} else {
-
-			return "stajyer";
+			setIsUnvani("stajyer");
 		}
 
 	}

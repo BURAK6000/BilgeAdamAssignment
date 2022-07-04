@@ -10,27 +10,27 @@ public class Engineer extends Employee {
 
 	public Engineer(String name, String soyisim, int maas) {
 		super(name, soyisim, maas);
-
-	}
-
-	public void maasZamOrani(double zamOrani) {
-
-		setMaas((int) (getMaas() + getMaas() * zamOrani / 100) + 250);
+		setIsUnvani();
 
 	}
 
 	@Override
-	public String getIsUnvani() {
+	public double zamlıMaas(double zamOrani) {
+		// TODO Auto-generated method stub
+		return super.zamlıMaas((zamOrani) + 250);
+	}
+
+	@Override
+	public void setIsUnvani() {
 		if (getMaas() > 10000 && getMaas() < 17000) {
-			return "kidemli muhendis";
+			setIsUnvani("kıdemli muhendis");
+
 		} else if (getMaas() > 17000) {
-			return "uzman muhendis";
+			setIsUnvani("uzman muhendis");
 
 		} else {
-
-			return "stajyer";
+			setIsUnvani("muhendis");
 		}
-
 	}
 
 }

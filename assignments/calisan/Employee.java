@@ -57,9 +57,20 @@ public class Employee {
 		this.maas = maas;
 	}
 
-	public void zamlıMaas(double zamOrani) {
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", soyisim=" + soyisim + ", isUnvani=" + isUnvani + ", maas=" + maas + "]";
+	}
+
+	public double zamlıMaas(double zamOrani) {
 
 		setMaas((int) (getMaas() + getMaas() * zamOrani / 100));
+		return getMaas();
+
+	}
+
+	public void setIsUnvani() {
+		// TODO Auto-generated method stub
 
 	}
 
