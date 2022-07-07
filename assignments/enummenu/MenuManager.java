@@ -5,9 +5,9 @@ import java.util.Random;
 public class MenuManager {
 
 	Menu menu = new Menu();
-	Random random = new Random();
 
 	public void haftalıkMenuOlustur() {
+		Random random = new Random();
 
 		for (int i = 0; i < Gun.values().length; i++) {
 

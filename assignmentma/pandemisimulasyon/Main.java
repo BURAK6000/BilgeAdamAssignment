@@ -6,7 +6,9 @@ public class Main {
 
 		HastaSımulasyonu hastaSımulasyonu = new HastaSımulasyonu();
 
-		hastaSımulasyonu.rastgeleDagıt();
+		System.out.println("Doktor sayisi" + hastaSımulasyonu.rastgeleInsanDagıt()[1].doktorSayisi);
+
+		// System.out.println("sonuc" + hastaSımulasyonu.dunya.ulkeler[1].insanSayisi);
 
 	}
 
