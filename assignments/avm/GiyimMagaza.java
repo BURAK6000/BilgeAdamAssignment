@@ -1,5 +1,5 @@
 package assignments.avm;
 
-public class GiyimMagaza {
+public class GiyimMagaza extends Magaza {
 
 }
