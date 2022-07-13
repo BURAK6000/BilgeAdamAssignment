@@ -1,7 +1,7 @@
 
 #JAVA ANKARA BOOST ÖDEV
 
-	Pandemi simülasyonu yapılacak. Belli kriterler çerçevesinde bir pandemi olayının simülasyonunu yapacak bir kodlama istenmektedir. Aşağıdaki özellikler aranmaktadır.
+Pandemi simülasyonu yapılacak. Belli kriterler çerçevesinde bir pandemi olayının simülasyonunu yapacak bir kodlama istenmektedir. Aşağıdaki özellikler aranmaktadır.
 
 1.	Simülasyon girdi olarak şuanlar talep etmelidir.
 
