@@ -359,4 +359,61 @@ public class HastaSimulasyonu {
 		return toplamSeyahatYapanInsanSayisi;
 
 	}
+
+	/**
+	 * Bu metod girilen gün döngüsü sonlandığında kaç kişinin seyahat ettiği, kaç
+	 * kişinin hastalık kaptığı, kaç kişinin öldüğü kaç kişinin hayatta kaldığı vr
+	 * kaç kişinin aşılandığının bilgisini verir.
+	 * 
+	 * 
+	 * @param dunyaNufusu
+	 * @param ulkeSayisi
+	 * @param gunSayisi
+	 * @param superInsanOrani
+	 * @param doktorOrani
+	 * @param hastaInsanOrani
+	 * @param asilamaOrani
+	 * @param seyahatOrani
+	 */
+
+	public void uygulamaCalistir(long dunyaNufusu, int ulkeSayisi, int gunSayisi, double superInsanOrani,
+			double doktorOrani, double hastaInsanOrani, double asilamaOrani, double seyahatOrani) {
+
+		HastaSimulasyonu hastaSimulasyonu = new HastaSimulasyonu(dunyaNufusu, ulkeSayisi);
+
+		System.out.println("============ JAVA ANKARA BOOST ODEV Pandemi Simulasyonu ==============");
+
+		hastaSimulasyonu.rastgeleInsanDagıt();
+
+		hastaSimulasyonu.doktorSayisi(doktorOrani);
+
+		hastaSimulasyonu.superInsanSayisi(superInsanOrani);
+
+		hastaSimulasyonu.hastaInsanSayisi(hastaInsanOrani);
+
+		hastaSimulasyonu.hastalıkKapanInsanSayisi(hastaInsanOrani);
+
+		hastaSimulasyonu.seyahatEdenInsanSayisi(seyahatOrani);
+
+		hastaSimulasyonu.saglikliInsanSayisi();
+
+		hastaSimulasyonu.gunSayisi(gunSayisi, asilamaOrani);
+
+		System.out.println(gunSayisi + ". gune kadar toplam  hastalik kapan kisi sayisi "
+				+ hastaSimulasyonu.toplamHastalıkKapanInsanSayisi());
+
+		System.out.println(
+				gunSayisi + ". gune kadar toplam olen kisi sayisi " + hastaSimulasyonu.toplamOlenInsanSayisi());
+
+		System.out.println(gunSayisi + ". gune kadar toplam hayatta kalan insan sayisi "
+				+ hastaSimulasyonu.toplamHayattaKalanInsanSayisi());
+
+		System.out.println(
+				gunSayisi + ". gune kadar toplam asilanan insan sayisi " + hastaSimulasyonu.toplamAsilananKisiSayisi());
+
+		System.out.println(gunSayisi + ". gune kadar toplam seyahat eden insan sayisi "
+				+ hastaSimulasyonu.toplamSeyahatYapanInsanSayisi());
+
+	}
+
 }
