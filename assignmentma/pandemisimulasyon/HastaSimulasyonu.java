@@ -22,7 +22,7 @@ public class HastaSimulasyonu {
 	 * Bu metod, her ulkeye tek tek rastgele bir nufus degeri atanmasını saglar. Bu
 	 * degerlerin toplamı, toplam Dunya nufusunu verecek sekilde ayarlanır.
 	 * 
-	 * @return dunya.ulkeler *
+	 * @return dunya.ulkeler
 	 * 
 	 */
 

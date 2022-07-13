@@ -95,7 +95,6 @@ public class Ulke {
 		super();
 		this.insanSayisi = insanSayisi;
 
-//		rastgele nufus dağıtım fonksiyonunu burada tanımla!!!!!
 	}
 
 	public long getInsanSayisi() {
