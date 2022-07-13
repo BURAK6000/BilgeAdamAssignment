@@ -2,13 +2,26 @@ package assignmentma.pandemisimulasyon;
 
 public class Dunya {
 
-	long toplamInsanSayisi;
+	private long toplamInsanSayisi;
+	public static int gunSayisi;
+	public int ulkeSayisi;
 
-	public Dunya(long toplamInsanSayisi) {
+	Ulke[] ulkeler;
+
+	public Dunya(long toplamInsanSayisi, int ulkeSayisi) {
 		super();
 		this.toplamInsanSayisi = toplamInsanSayisi;
+		this.ulkeSayisi = ulkeSayisi;
+		ulkeler = new Ulke[ulkeSayisi];
+
 	}
 
-	Ulke[] ulkeler = new Ulke[208];
+	public long getToplamInsanSayisi() {
+		return toplamInsanSayisi;
+	}
+
+	public void setToplamInsanSayisi(long toplamInsanSayisi) {
+		this.toplamInsanSayisi = toplamInsanSayisi;
+	}
 
 }
