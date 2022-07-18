@@ -361,9 +361,9 @@ public class HastaSimulasyonu {
 	}
 
 	/**
-	 * Bu metod girilen gün döngüsü sonlandığında kaç kişinin seyahat ettiği, kaç
-	 * kişinin hastalık kaptığı, kaç kişinin öldüğü kaç kişinin hayatta kaldığı vr
-	 * kaç kişinin aşılandığının bilgisini verir.
+	 * Bu metod girilen parametre degerlerine göre kaç kişinin seyahat ettiği, kaç
+	 * kişinin hastalık kaptığı, kaç kişinin öldüğü, kaç kişinin hayatta kaldığı ve
+	 * kaç kişinin aşılandığının bilgilerini verir.
 	 * 
 	 * 
 	 * @param dunyaNufusu
@@ -374,6 +374,7 @@ public class HastaSimulasyonu {
 	 * @param hastaInsanOrani
 	 * @param asilamaOrani
 	 * @param seyahatOrani
+	 * 
 	 */
 
 	public void uygulamaCalistir(long dunyaNufusu, int ulkeSayisi, int gunSayisi, double superInsanOrani,
