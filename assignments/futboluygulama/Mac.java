@@ -30,8 +30,4 @@ public class Mac {
 		return oyuncuIndex;
 	}
 
-	public takimDegistir() {
-		
-	}
-
 }
