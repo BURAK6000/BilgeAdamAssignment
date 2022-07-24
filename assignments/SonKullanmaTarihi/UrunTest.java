@@ -3,6 +3,7 @@ package assignments.SonKullanmaTarihi;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,8 @@ public class UrunTest {
 		UrunTest test = new UrunTest();
 
 		for (int i = 0; i < 3; i++) {
-			Urun urun = test.urunYarat();
+
+			Optional<Urun> urun = test.urunYarat();
 
 			test.listeyeEkle(urun);
 
@@ -35,13 +37,14 @@ public class UrunTest {
 
 	}
 
-	public void listeyeEkle(Urun urun) {
+	public void listeyeEkle(Optional<Urun> urun) {
 
-		urunList.add(urun);
+		if (urun.isPresent())
+			urunList.add(urun.get());
 
 	}
 
-	public Urun urunYarat() {
+	public Optional<Urun> urunYarat() {
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -59,9 +62,10 @@ public class UrunTest {
 
 		if (isim.equals("") || fiyat <= 0) {
 
-			return null;
+			return Optional.ofNullable(null);
 		} else {
-			return new Urun(isim, fiyat, sonKullanmaDate);
+
+			return Optional.ofNullable(new Urun(isim, fiyat, sonKullanmaDate));
 		}
 
 	}
