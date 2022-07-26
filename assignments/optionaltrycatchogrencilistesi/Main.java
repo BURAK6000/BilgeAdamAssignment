@@ -10,7 +10,8 @@ public class Main {
 		OgrenciManager ogrenciManager = new OgrenciManager();
 		Okul okul = new Okul();
 
-		okul.ogrenciListesiOlustur(new Ogrenci(null, null, null));
+		okul.ogrenciListesiOlustur(new Ogrenci(null, null, null), new Ogrenci(null, null, null),
+				new Ogrenci(null, null, null));
 	}
 
 }
