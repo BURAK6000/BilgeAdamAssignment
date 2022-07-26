@@ -40,4 +40,8 @@ public class Urun {
 		return sonKullanmaDate;
 	}
 
+	public void setSonKullanmaDate(LocalDate sonKullanmaDate) {
+		this.sonKullanmaDate = sonKullanmaDate;
+	}
+
 }

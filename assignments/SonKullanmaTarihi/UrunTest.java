@@ -16,7 +16,7 @@ public class UrunTest {
 	public static void main(String[] args) {
 		UrunTest test = new UrunTest();
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 1; i++) {
 
 			Optional<Urun> urun = test.urunYarat();
 
@@ -58,7 +58,7 @@ public class UrunTest {
 
 		String sonKullanmaTarihi = scanner.nextLine();
 
-		LocalDate sonKullanmaDate = LocalDate.parse(sonKullanmaTarihi);
+		LocalDate sonKullanmaDate = LocalDate.parse(sonKullanmaTarihi); // yil-ay-gun
 
 		if (isim.equals("") || fiyat <= 0) {
 
@@ -84,15 +84,18 @@ public class UrunTest {
 
 		List<Urun> zamlıUrunListesi = new ArrayList<Urun>();
 
-		zamlıUrunListesi = urunList.stream().filter(s -> s.getSonKullanmaDate().isAfter(LocalDate.now()))
-				.collect(Collectors.toList());
+		zamlıUrunListesi = urunList.stream().filter(s -> s.getSonKullanmaDate().isAfter(LocalDate.now())).map(s->{
+			
+			s.setFiyat(s.getFiyat()*1.30);
+			return s;
+		}).collect(Collectors.toList());
+				
+		
 
-		for (int i = 0; i < zamlıUrunListesi.size(); i++) {
-
-			zamlıUrunListesi.get(i).fiyat += zamlıUrunListesi.get(i).fiyat * 0.3;
-
-		}
-
+//		for (int i = 0; i < zamlıUrunListesi.size(); i++) {
+//
+//			zamlıUrunListesi.get(i).fiyat += zamlıUrunListesi.get(i).fiyat * 0.3;
+//		}
 		zamlıUrunListesi.forEach(System.out::println);
 
 	}
