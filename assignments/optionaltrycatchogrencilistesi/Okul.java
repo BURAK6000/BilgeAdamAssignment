@@ -6,14 +6,18 @@ import java.util.Optional;
 
 public class Okul {
 
-	List<Optional<Ogrenci>> ogrencis = new ArrayList<Optional<Ogrenci>>();
+	List<Ogrenci> ogrencis;
+
+	OgrenciManager ogrenciManager;
 
 	public Okul() {
-		super();
+		ogrencis = new ArrayList<Ogrenci>();
+		ogrenciManager = new OgrenciManager();
 
 	}
 
 	public void ogrenciListesiOlustur(Ogrenci... optionals) {
+
 		Optional<Ogrenci> ogrenci;
 
 		OgrenciManager ogrenciManager = new OgrenciManager();
@@ -32,7 +36,7 @@ public class Okul {
 
 			} else if (ogrenci.isPresent()) {
 
-				ogrencis.add(ogrenci);
+				ogrencis.add(ogrenci.get());
 			}
 
 		}

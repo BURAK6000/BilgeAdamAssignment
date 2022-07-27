@@ -19,57 +19,32 @@ public class OgrenciManager {
 
 	public String isimKontrol() {
 
-		boolean kontrol = false;
 		String isim;
 
-		do {
-			System.out.println("Lutfen isminizi giriniz");
-			isim = scanner.nextLine();
+		System.out.println("Lutfen isminizi giriniz");
+		isim = scanner.nextLine();
 
-			kontrol = false;
-
-			if (isim.length() < 3) {
-				try {
-					throw new IsimKontroluException("Isim karakter sayisi 3 'ten az olamaz");
-
-				} catch (IsimKontroluException e) {
-
-					System.out.println(e.getMessage());
-					kontrol = true;
-
-				}
-			}
-		} while (kontrol);
+		if (isim.length() < 3) {
+			throw new IsimKontroluException("Isim karakter sayisi 3 'ten az olamaz");
+		}
 		return isim;
 	}
 
 	public LocalDate yasKontrol() {
 
-		boolean kontrol = false;
 		LocalDate dogumTarihiDate;
 		int n;
 
-		do {
-			System.out.println("Lutfen dogum tarihini giriniz: ");
+		System.out.println("Lutfen dogum tarihini giriniz: ");
 
-			String dogumTarihiString = scanner.nextLine();
-			dogumTarihiDate = LocalDate.parse(dogumTarihiString);
+		String dogumTarihiString = scanner.nextLine();
+		dogumTarihiDate = LocalDate.parse(dogumTarihiString);
 
-			n = LocalDate.now().getYear() - dogumTarihiDate.getYear();
+		n = LocalDate.now().getYear() - dogumTarihiDate.getYear();
+		if (n < 8) {
+			throw new YasKontroluException("Ogrenci yasi 8 'ten kucuk olamaz");
+		}
 
-			kontrol = false;
-
-			if (n < 8) {
-				try {
-
-					throw new YasKontroluException("Ogrenci yasi 8 'ten kucuk olamaz");
-
-				} catch (YasKontroluException e) {
-					System.out.println(e.getMessage());
-					kontrol = true;
-				}
-			}
-		} while (kontrol);
 		return dogumTarihiDate;
 	}
 
@@ -104,9 +79,14 @@ public class OgrenciManager {
 
 	public Optional<Ogrenci> ogrenciUret() {
 
-		Optional<Ogrenci> ogrenciOptional = Optional.ofNullable(new Ogrenci(isimKontrol(), yasKontrol(), notKontrol()));
+		try {
+			return Optional.ofNullable(new Ogrenci(isimKontrol(), yasKontrol(), notKontrol()));
 
-		return ogrenciOptional;
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+			return Optional.empty();
+		}
 
 	}
 }
