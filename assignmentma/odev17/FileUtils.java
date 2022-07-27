@@ -210,8 +210,6 @@ public class FileUtils {
 			System.out.println(e.toString());
 		}
 
-		ogrencis.add(null);
-
 	}
 
 }
