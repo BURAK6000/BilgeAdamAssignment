@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Kiralama {
 
-	private static List<Kitap> kitapListesi;
+	private List<Kitap> kitapListesi;
 
-	private static List<Musteri> musteriListesi;
+	private List<Musteri> musteriListesi;
 
 	public List<Kitap> getKitapListesi() {
 		return kitapListesi;

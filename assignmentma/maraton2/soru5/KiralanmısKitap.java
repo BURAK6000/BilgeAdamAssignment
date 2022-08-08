@@ -30,9 +30,7 @@ public class KiralanmısKitap {
 		kiralamaIslemleri.kiralamaYap(new Kitap("aaqq12", "Veba111", 123, "Albertcamus"),
 				new Musteri("qaq1", "burakburakozer", "ozer", "sdsds"));
 
-		// kiralanmısKitap.kitapSahibiBul("aaqq12");
-
-		kiralanmısKitap.kitapKiralayanListesi("brkozr");
+		kiralanmısKitap.kitapSahibiBul("aaqq12");
 
 	}
 
@@ -46,7 +44,7 @@ public class KiralanmısKitap {
 	public void kitapSahibiBul(String kitapId) {
 
 		kiralamaIslemleri.getKitapMusteri().entrySet().stream().filter(s -> s.getKey().getKitapId().equals(kitapId))
-				.collect(Collectors.toList()).stream().forEach(s -> s.getValue().getAd());
+				.forEach(s -> s.getValue().toString());
 
 	}
 
@@ -62,7 +60,7 @@ public class KiralanmısKitap {
 		kitapKiralayanMusteriListesi = kiralamaIslemleri.getKitapMusteri().entrySet().stream()
 				.filter(s -> s.getKey().getKitapAdi().equals(ad)).collect(Collectors.toList());
 
-		kitapKiralayanMusteriListesi.forEach(s -> s.getKey());
+		kitapKiralayanMusteriListesi.forEach(s -> s.getValue());
 
 	}
 
