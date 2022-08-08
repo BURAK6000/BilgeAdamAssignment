@@ -16,9 +16,7 @@ import java.util.Scanner;
 public class FileUtils {
 
 	public static void main(String[] args) {
-
 		menu();
-
 	}
 
 	public static Path path = Path
@@ -27,19 +25,14 @@ public class FileUtils {
 	public static File file = new File(path.toString());
 
 	public static void menu() {
-
 		Scanner scanner = new Scanner(System.in);
-
 		System.out.println("0- Cikis");
 		System.out.println("1- Dosya Yarat");
 		System.out.println("2- Dosyaya yaz");
 		System.out.println("3- Dosyayı oku");
 		System.out.println("4- Ogrenci olustur");
-
 		int n;
-
 		do {
-
 			System.out.println("Lütfen Islem Seciniz ");
 			n = scanner.nextInt();
 			switch (n) {
@@ -48,10 +41,8 @@ public class FileUtils {
 					dosyaYarat(file);
 				} catch (Exception e) {
 					System.out.println(e.toString());
-
 				}
 				break;
-
 			}
 			case 2:
 				try {
@@ -77,7 +68,6 @@ public class FileUtils {
 					e.printStackTrace();
 				}
 				break;
-
 			case 0:
 				System.out.println("Sistemden cikiliyor...");
 				break;
@@ -88,17 +78,14 @@ public class FileUtils {
 	}
 
 	public static void dosyaYarat(File file) throws Exception {
-
 		if (file.exists()) {
 			throw new Exception("Dosya mevcuttur");
 		} else {
 			System.out.println("Dosya olusturuluyor...");
 			file.createNewFile();
-
 			Thread.sleep(1000);
 			System.out.println("Dosya olusturuldu.");
 		}
-
 	}
 
 	public static void dosyayaYaz(File file, int ogrenciSayisi) throws Exception {
@@ -177,16 +164,12 @@ public class FileUtils {
 			System.out.println(e.toString());
 		}
 		ogrenciList.forEach(System.out::println);
-
 	}
 
 	public static void ogrenciListesiOlustur(File file) {
-
 		List<Ogrenci> ogrencis = new ArrayList<Ogrenci>();
-
 		try {
 			BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-
 			String ifadeString = "";
 			String[] listeStrings;
 			try {
@@ -195,7 +178,6 @@ public class FileUtils {
 					ogrencis.add(new Ogrenci(ifadeString.split(",")[0], LocalDate.parse(ifadeString.split(",")[1]),
 							Integer.parseInt(ifadeString.split(",")[2]), Integer.parseInt(ifadeString.split(",")[3]),
 							Integer.parseInt(ifadeString.split(",")[4])));
-
 				}
 				ogrencis.forEach(System.out::println);
 			} catch (NumberFormatException e) {
@@ -209,7 +191,6 @@ public class FileUtils {
 			// TODO Auto-generated catch block
 			System.out.println(e.toString());
 		}
-
 	}
 
 }

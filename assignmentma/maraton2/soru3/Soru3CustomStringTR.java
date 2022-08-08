@@ -1,4 +1,4 @@
-package javaboostankara3maraton1;
+package assignmentma.maraton2.soru3;
 
 public class Soru3CustomStringTR {
 
