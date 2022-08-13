@@ -16,4 +16,9 @@ public class Kasiyer extends Musteri {
 		this.calısanNumarasi = calısanNumarasi;
 	}
 
+	@Override
+	public String toString() {
+		return "Kasiyer [calısanNumarasi=" + calısanNumarasi + "]";
+	}
+
 }

@@ -12,8 +12,6 @@ import assignmentma.maraton2.soru4.repository.entity.Musteri;
 
 public class KiralanmısKitap {
 
-	KiralamaIslemleri kiralamaIslemleri = new KiralamaIslemleri();
-
 	List<Entry<Kitap, Musteri>> kitapKiralayanMusteriListesi = new ArrayList<Map.Entry<Kitap, Musteri>>();
 
 	public static void main(String[] args) {
@@ -21,6 +19,7 @@ public class KiralanmısKitap {
 		KiralanmısKitap kiralanmısKitap = new KiralanmısKitap();
 
 		KiralamaIslemleri kiralamaIslemleri = new KiralamaIslemleri();
+
 		kiralamaIslemleri.kiralamaYap(new Kitap("aaqq", "Veba", 123, "camus"),
 				new Musteri("qaq", "brkozr", "ozer", "sdsds"));
 
@@ -30,7 +29,9 @@ public class KiralanmısKitap {
 		kiralamaIslemleri.kiralamaYap(new Kitap("aaqq12", "Veba111", 123, "Albertcamus"),
 				new Musteri("qaq1", "burakburakozer", "ozer", "sdsds"));
 
-		kiralanmısKitap.kitapSahibiBul("aaqq12");
+		// System.out.println(kiralamaIslemleri.getKitapMusteri());
+
+		kiralanmısKitap.kitapSahibiBul(kiralamaIslemleri, "aaqq12");
 
 	}
 
@@ -41,10 +42,12 @@ public class KiralanmısKitap {
 	 * @param kitapId
 	 */
 
-	public void kitapSahibiBul(String kitapId) {
+	public void kitapSahibiBul(KiralamaIslemleri kiralamaIslemleri, String kitapId) {
+
+		// kiralamaIslemleri.getKitapMusteri().entrySet().forEach(System.out::println);
 
 		kiralamaIslemleri.getKitapMusteri().entrySet().stream().filter(s -> s.getKey().getKitapId().equals(kitapId))
-				.forEach(s -> s.getValue().toString());
+				.forEach(s -> System.out.println(s.getValue().getAd()));
 
 	}
 
@@ -55,7 +58,7 @@ public class KiralanmısKitap {
 	 * @param ad
 	 */
 
-	public void kitapKiralayanListesi(String ad) {
+	public void kitapKiralayanListesi(KiralamaIslemleri kiralamaIslemleri, String ad) {
 
 		kitapKiralayanMusteriListesi = kiralamaIslemleri.getKitapMusteri().entrySet().stream()
 				.filter(s -> s.getKey().getKitapAdi().equals(ad)).collect(Collectors.toList());
@@ -68,7 +71,7 @@ public class KiralanmısKitap {
 	 * adı ahm ile başlayan müşterilerin listesini doner
 	 */
 
-	public void ahmMusteriBul() {
+	public void ahmMusteriBul(KiralamaIslemleri kiralamaIslemleri) {
 		List<Entry<Kitap, Musteri>> ahmMusteriListesi;
 
 		ahmMusteriListesi = kiralamaIslemleri.getKitapMusteri().entrySet().stream()
@@ -84,7 +87,7 @@ public class KiralanmısKitap {
 	 * @param musteriId
 	 */
 
-	public void musteriIdKiralananKitaplariBul(String musteriId) {
+	public void musteriIdKiralananKitaplariBul(KiralamaIslemleri kiralamaIslemleri, String musteriId) {
 
 		kiralamaIslemleri.getKitapMusteri().entrySet().stream().filter(s -> s.getValue().getId().equals(musteriId))
 				.forEach(s -> s.getKey());

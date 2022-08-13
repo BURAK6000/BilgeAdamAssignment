@@ -19,7 +19,6 @@ public class Runner {
 				new Musteri("qaq1", "burakburakozer", "ozer", "sdsds"));
 
 		kiralamaIslemleri.kiralananKitapListesi();
-		kiralamaIslemleri.kiralananKitapListesi();
 
 		System.out.println(kiralamaIslemleri.getKitapMusteri());
 

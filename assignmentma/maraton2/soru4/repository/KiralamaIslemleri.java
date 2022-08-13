@@ -10,12 +10,11 @@ import assignmentma.maraton2.soru4.repository.entity.Musteri;
 
 public class KiralamaIslemleri implements IKitapKiralamaIslem {
 
-	Kiralama kiralama;
+	Kiralama kiralama = new Kiralama();
 
 	public KiralamaIslemleri() {
 
 		super();
-		kiralama = new Kiralama();
 	}
 
 	private Map<Kitap, Musteri> kitapMusteri = new HashMap<Kitap, Musteri>();
