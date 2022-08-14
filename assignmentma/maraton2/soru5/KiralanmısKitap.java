@@ -63,7 +63,7 @@ public class KiralanmısKitap {
 		kitapKiralayanMusteriListesi = kiralamaIslemleri.getKitapMusteri().entrySet().stream()
 				.filter(s -> s.getKey().getKitapAdi().equals(ad)).collect(Collectors.toList());
 
-		kitapKiralayanMusteriListesi.forEach(s -> s.getValue());
+		kitapKiralayanMusteriListesi.forEach(s -> System.out.println(s.getValue()));
 
 	}
 
@@ -77,7 +77,7 @@ public class KiralanmısKitap {
 		ahmMusteriListesi = kiralamaIslemleri.getKitapMusteri().entrySet().stream()
 				.filter(s -> s.getValue().getAd().startsWith("ahm")).collect(Collectors.toList());
 
-		ahmMusteriListesi.stream().forEach(s -> s.getValue());
+		ahmMusteriListesi.stream().forEach(s -> System.out.println(s.getValue()));
 
 	}
 
@@ -90,7 +90,7 @@ public class KiralanmısKitap {
 	public void musteriIdKiralananKitaplariBul(KiralamaIslemleri kiralamaIslemleri, String musteriId) {
 
 		kiralamaIslemleri.getKitapMusteri().entrySet().stream().filter(s -> s.getValue().getId().equals(musteriId))
-				.forEach(s -> s.getKey());
+				.forEach(s -> System.out.println(s.getKey()));
 
 	}
 
